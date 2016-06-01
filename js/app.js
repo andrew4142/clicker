@@ -6,11 +6,22 @@ var ClickerApp = angular.module('ClickerApp', ["ngRoute"])
             templateUrl:'views/click.html',
             controller:'ClickController'
         });
-//        $routeProvider.when('/answer',
-//        {
-//            templateUrl:'views/answer.html',
-//            controller:'AnswerController'
-//        });
+        $routeProvider.when('/success',
+        {
+            templateUrl:'views/success.html',
+            controller:'SuccessController'
+        });
+        $routeProvider.when('/error',
+        {
+            templateUrl:'views/error.html',
+            controller:'ErrorController'
+        });
+        $routeProvider.when('/index',
+        {
+            templateUrl:'views/index.html',
+            controller:'ErrorController'
+        });
+		$routeProvider.otherwise({redirectTo: '/index'});
 		$locationProvider.html5Mode(true);
 });
 
