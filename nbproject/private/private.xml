@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/OpenServer/domains/clicker.dev/.htaccess</file>
-            <file>file:/D:/OpenServer/domains/clicker.dev/views/click.html</file>
-            <file>file:/D:/OpenServer/domains/clicker.dev/js/controllers/ClickController.js</file>
-            <file>file:/D:/OpenServer/domains/clicker.dev/index.html</file>
-            <file>file:/D:/OpenServer/domains/clicker.dev/js/app.js</file>
-            <file>file:/D:/OpenServer/domains/clicker.dev/js/controllers/numpadCtrl.js</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/views/error.html</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/js/app.js</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/views/click.html</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/index.html</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/.htaccess</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/api/index.php</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/views/success.html</file>
+            <file>file:/D:/openserver/OpenServer/domains/clicker/views/index.html</file>
         </group>
     </open-files>
 </project-private>

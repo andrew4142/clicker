@@ -1,7 +1,13 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+var ClickerApp = angular.module('ClickerApp');
+ClickerApp.controller("ClickController", function ($scope, $http, $routeParams) {
+	
+	console.log($routeParams);
 
+	
+	$http({method:'GET', url:'http://api.clicker/click'}).
+		success(function(data) {
+			console.log(data);
+			$scope.test_query = data;
+		})
+})
 

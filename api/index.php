@@ -17,7 +17,7 @@ $app->get('/hello', function () use ($app) {
 });
 
 $app->get('/click', function () use ($app) {
-    return $app->json('Hello!');
+    return $app->json($_SERVER);
 });
 
 $app->run();

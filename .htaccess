@@ -5,7 +5,7 @@
     #RewriteBase /path/to/app
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^ index.html [NE,L]
-    RewriteRule ^(click) /index.html [NE,L]
+	RewriteRule ^.*$ index.php [NE,L]
+    #RewriteRule ^(andrew) /index.html [NE,L]
     
 </IfModule>
