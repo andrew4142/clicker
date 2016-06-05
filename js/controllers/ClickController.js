@@ -1,13 +1,22 @@
 var ClickerApp = angular.module('ClickerApp');
-ClickerApp.controller("ClickController", function ($scope, $http, $routeParams) {
+ClickerApp.controller("ClickController", function ($scope, $http, $routeParams, $location) {
 	
-	console.log($routeParams);
-
+	var post_params = {remote_ref:remote_ref,
+				remote_ua:remote_ua,
+				remote_ip:remote_ip,
+				param1:$routeParams.param1,
+				param2:$routeParams.param2,
+			};
 	
-	$http({method:'GET', url:'http://api.clicker/click'}).
+	$http({method:'POST', url:'api/click', data:post_params}).
 		success(function(data) {
-			console.log(data);
-			$scope.test_query = data;
+			if(data.success){
+				$location.url("/success/" + data.id);
+			}
+			else{
+				console.log(data);
+				$location.url("/error/" + data.id);
+			}
 		})
 })
 

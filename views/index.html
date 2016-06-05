@@ -1,7 +1,85 @@
 
-
-
-<div>main view</div>
-<div>{{test.text}}</div>
-<div ng-repeat="row in test_query">{{row.name}}</div>
+<h1>All clicks</h1>
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-search"></i></div>
+      <input type="text" class="form-control" placeholder="Search da Fish" ng-model="searchFish">
+    </div>
+  </div>
+</form>
+<table class="table table-bordered table-striped">
+	<thead>
+      <tr>
+        <td>
+			<a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse" >
+            ID
+            <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'ua'; sortReverse = !sortReverse ">
+            User Agent
+            <span ng-show="sortType == 'ua' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'ua' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'ip'; sortReverse = !sortReverse">
+            IP
+            <span ng-show="sortType == 'ip' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'ip' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'ref'; sortReverse = !sortReverse">
+            Referrer
+            <span ng-show="sortType == 'ref' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'ref' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'param1'; sortReverse = !sortReverse">
+            Param1
+            <span ng-show="sortType == 'param1' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'param1' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'param2'; sortReverse = !sortReverse">
+            Param2
+            <span ng-show="sortType == 'param2' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'param2' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'error'; sortReverse = !sortReverse">
+            Error
+            <span ng-show="sortType == 'error' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'error' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+		<td>
+			<a href="#" ng-click="sortType = 'bad_domain'; sortReverse = !sortReverse">
+            Bad_domain
+            <span ng-show="sortType == 'bad_domain' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'bad_domain' && sortReverse" class="fa fa-caret-up"></span>
+			</a>
+		</td>
+      </tr>
+    </thead>
+	<tbody>
+		<tr ng-repeat="click in clicks | orderBy:sortType:sortReverse | filter:searchFish">
+			<td>{{click.id}}</td>
+			<td>{{click.ua}}</td>
+			<td>{{click.ip}}</td>
+			<td>{{click.ref}}</td>
+			<td>{{click.param1}}</td>
+			<td>{{click.param2}}</td>
+			<td>{{click.error}}</td>
+			<td>{{click.bad_domain}}</td>
+		</tr>	
+	<tbody>
+</table>
 

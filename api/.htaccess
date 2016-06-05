@@ -1,12 +1,14 @@
 <ifModule mod_headers.c>
-    Header set Access-Control-Allow-Origin: http://clicker
+	Header set Access-Control-Allow-Origin *
+	Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+	Header always set Access-Control-Allow-Headers "*"
+	Header set Access-Control-Allow-Credentials true
 </ifModule>
 
 <IfModule mod_rewrite.c>
     Options -MultiViews
 
     RewriteEngine On
-    #RewriteBase /path/to/app
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]

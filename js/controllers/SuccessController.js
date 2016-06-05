@@ -1,10 +1,9 @@
 var ClickerApp = angular.module('ClickerApp');
 
-ClickerApp.controller("SuccessController", function ($scope, $http) {
+ClickerApp.controller("SuccessController", function ($scope, $http, $routeParams) {
 	
-	$scope.test = {text:'test string'};
-	$http({method:'GET', url:'http://api.clicker/hello'}).
+	$http({method:'GET', url:'http://clicker.dev/api/clickByid?id=' + $routeParams.id}).
 		success(function(data) {
-			$scope.test_query = data;
+			$scope.clickInfo = data;
 		})
-})
+});

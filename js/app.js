@@ -1,7 +1,7 @@
 var ClickerApp = angular.module('ClickerApp', ["ngRoute"])
 	.config(function($routeProvider, $locationProvider) {
 		$routeProvider
-			.when('/click/:id',
+			.when('/click?pararm1&pararm2',
 			{
 				templateUrl: 'views/click.html',
 				controller: 'ClickController'
@@ -13,17 +13,17 @@ var ClickerApp = angular.module('ClickerApp', ["ngRoute"])
 				controller: 'ClickController'
 			});
 		$routeProvider
-			.when('/success',
+			.when('/success/:id',
 			{
 				templateUrl: 'views/success.html',
 				controller: 'SuccessController'
 			});
-//		$routeProvider
-//			.when('/error',
-//			{
-//				templateUrl: 'views/error.html',
-//				controller: 'ErrorController'
-//			});
+		$routeProvider
+			.when('/error/:id',
+			{
+				templateUrl: 'views/error.html',
+				controller: 'ErrorController'
+			});
 		$routeProvider
 			.when('/index',
 			{
